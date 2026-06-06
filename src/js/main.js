@@ -391,7 +391,7 @@ document.addEventListener("DOMContentLoaded", () => {
             activarConfiguracion();
             break;
           case "reportes":
-            loadScript("https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js")
+            loadScript("/vendor/chart.js/chart.umd.min.js")
               .then(() => {
                 activarReportes();
               })

@@ -33,6 +33,11 @@ app.use(express.json());
 
 // Servir archivos estáticos desde la carpeta 'src'
 app.use(express.static(path.join(__dirname, "src")));
+// Servir Chart.js localmente desde node_modules para evitar fallos de CDN
+app.use(
+  "/vendor/chart.js",
+  express.static(path.join(__dirname, "node_modules", "chart.js", "dist"))
+);
 
 // Rutas específicas antes de archivos estáticos
 app.get("/login", (req, res) => {
