@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reportes</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/print.css" media="print" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <style>
+    /* Solución para visibilidad al imprimir cuando el Tema Oscuro está activo */
+    @media print {
+      body.dark, 
+      body.dark .print-logo, 
+      body.dark #reporteContainer, 
+      body.dark table,
+      body.dark h1, 
+      body.dark h2, 
+      body.dark h3, 
+      body.dark p,
+      body.dark span {
+        color: #000 !important;
+        background-color: #fff !important;
+      }
+      /* Ocultar botones y formularios en la impresión */
+      .no-print, #formReportes, #btnImprimir {
+        display: none !important;
+      }
+    }
+  </style>
+
+  <body>
+    <div class="print-logo">
+      <h1 id="reporteBodegaNombre">Mi Bodeguita</h1>
+      <p>Sistema Integral de Inventario</p>
+      <p id="reporteBodegaDireccion">Dirección: Calle Principal 123, Ciudad, País</p>
+      <p id="reporteBodegaContacto">Teléfono: (123) 456-7890 | Email: info@mibodeguita.com</p>
+    </div>
+    <h2>Reportes</h2>
+    <form id="formReportes">
+      <div class="form-group">
+        <label for="tipoReporte">Tipo de Reporte:</label>
+        <select id="tipoReporte" name="tipoReporte">
+          <option value="inventario">Inventario Actual</option>
+          <option value="entradas">Entradas por Fecha</option>
+          <option value="salidas">Salidas por Fecha</option>
+          <option value="vencimientos">Productos Próximos a Vencer</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="fechaInicioReporte">Fecha de Inicio:</label>
+        <input type="date" id="fechaInicioReporte" name="fechaInicioReporte" />
+      </div>
+      <div class="form-group">
+        <label for="fechaFinReporte">Fecha de Fin:</label>
+        <input type="date" id="fechaFinReporte" name="fechaFinReporte" />
+      </div>
+      <button type="submit" class="btn btn-primary">Generar Reporte</button>
+    </form>
+    <div id="reporteContainer">
+      <div id="reporteHeader" style="display: none;">
+        <h3 id="reporteTitulo"></h3>
+        <button id="btnImprimir" class="btn btn-secondary">
+          <i class="fas fa-print"></i> Imprimir
+        </button>
+        <button id="btnGenerarPDF" class="no-print">
+          <i class="fas fa-file-pdf"></i> Generar PDF
+        </button>
+      </div>
+      <div id="reporteContenido">
+        <canvas id="reporteGrafico"></canvas>
+        <!-- Aquí se mostrará el reporte generado -->
+      </div>
+    </div>
+  </body>
+</html>

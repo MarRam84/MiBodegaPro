@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Entrada de Productos</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <h2>Entrada de Productos</h2>
+    <form id="formEntrada">
+      <div class="form-group">
+        <label for="nombreProductoEntrada">Nombre del Producto:</label>
+        <select
+          id="nombreProductoEntrada"
+          name="nombreProductoEntrada"
+          required
+        >
+          <option value="">Seleccione un producto</option>
+          <!-- Opciones de productos se cargarán aquí -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="categoriaProductoEntrada">Categoría:</label>
+        <select id="categoriaProductoEntrada" name="categoriaProductoEntrada">
+          <option value="">Seleccione una categoría</option>
+          <option value="alimentos">Alimentos</option>
+          <option value="bebidas">Bebidas</option>
+          <option value="limpieza">Limpieza</option>
+          <option value="electronica">Electrónica</option>
+          <option value="Herramientas">Herramientas</option>
+          <option value="Ropa">Ropa</option>
+          <option value="Juguetes">Juguetes</option>
+          <option value="Hogar">Hogar</option>
+          <option value="Muebles">Muebles</option>
+          <option value="Deportes">Deportes</option>
+          <option value="Salud">Salud</option>
+          <option value="Mascotas">Mascotas</option>
+          <option value="Calzado">Calzado</option>
+          <option value="otros">Otros</option>
+          <!-- Opciones de categoría -->
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="cantidadProductoEntrada">Cantidad:</label>
+        <input
+          type="number"
+          id="cantidadProductoEntrada"
+          name="cantidadProductoEntrada"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="ubicacionProductoEntrada">Ubicación:</label>
+        <input
+          type="text"
+          id="ubicacionProductoEntrada"
+          name="ubicacionProductoEntrada"
+        />
+      </div>
+      <div class="form-group">
+        <label for="fechaIngresoProductoEntrada">Fecha de Ingreso:</label>
+        <input
+          type="date"
+          id="fechaIngresoProductoEntrada"
+          name="fechaIngresoProductoEntrada"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="fechaVencimientoProductoEntrada"
+          >Fecha de Vencimiento:</label
+        >
+        <input
+          type="date"
+          id="fechaVencimientoProductoEntrada"
+          name="fechaVencimientoProductoEntrada"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar Entrada</button>
+    </form>
+  </body>
+</html>

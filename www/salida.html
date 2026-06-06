@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang=es><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Salida de Productos</title><link rel=stylesheet href=/agregar-producto.eeea073c.css><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin=anonymous referrerpolicy=no-referrer><body>
+    <h2>Salida de Productos</h2>
+    <form id=formSalida>
+      <div class=form-group>
+        <label for=nombreProductoSalida>Nombre del Producto:</label>
+        <select id=nombreProductoSalida name=nombreProductoSalida required>
+          <option value>Seleccione un producto</option>
+          
+        </select>
+      </div>
+      <div class=form-group>
+        <label for=cantidadProductoSalida>Cantidad a Retirar:</label>
+        <input type=number id=cantidadProductoSalida name=cantidadProductoSalida required>
+      </div>
+      <div class=form-group>
+        <label for=fechaSalidaProducto>Fecha de Salida:</label>
+        <input type=date id=fechaSalidaProducto name=fechaSalidaProducto required>
+      </div>
+      <div class=form-group>
+        <label for=motivoSalidaProducto>Motivo de Salida:</label>
+        <textarea id=motivoSalidaProducto name=motivoSalidaProducto rows=3></textarea>
+      </div>
+      <button class="btn btn-primary">Registrar Salida</button>
+    </form>
+  
+

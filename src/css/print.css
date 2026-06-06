@@ -1,0 +1,72 @@
+/* Mejoras de impresión: márgenes, header fijo, repetición de thead, saltos de página */
+
+@page {
+  size: A4;
+  margin: 15mm 12mm;
+}
+
+@media print {
+  html, body {
+    background: #fff;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Control explícito mediante clases: .no-print y .print-only */
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+
+  /* Membrete (header) fijo en la parte superior */
+  .print-logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 12mm;
+    border-bottom: 1px solid #000;
+    background: #fff;
+    z-index: 1000;
+    text-align: left;
+  }
+
+  .print-logo h1 { font-size: 20pt; margin: 0; font-weight: 700; }
+  .print-logo p  { font-size: 10pt; margin: 3px 0; }
+
+  /* Contenido del reporte debe fluir debajo del membrete */
+  #reporteContenido {
+    width: 100%;
+    margin-top: 110px; /* ajustar según altura del membrete real */
+  }
+
+  /* Tablas: repetir encabezado en cada página y evitar cortes dentro de filas */
+  .tabla-reporte { width: 100%; border-collapse: collapse; margin-top: 10px; }
+  .tabla-reporte thead { display: table-header-group; }
+  .tabla-reporte tbody { display: table-row-group; }
+  .tabla-reporte tr { page-break-inside: avoid; }
+  .tabla-reporte th, .tabla-reporte td { border: 1px solid #ddd; padding: 6px; text-align: left; }
+  .tabla-reporte th { background-color: #f2f2f2; }
+
+  /* Footer con numeración (simple) */
+  .print-footer {
+    position: fixed;
+    bottom: 8mm;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 10px;
+    color: #666;
+  }
+  .page-number:after { content: "Página " counter(page); }
+
+  /* Evitar que bloques importantes se dividan entre páginas */
+  .no-break { page-break-inside: avoid; }
+
+  /* Ocultar UI y elementos no deseados */
+  button, .nav, .sidebar, .no-print { display: none !important; }
+
+  img { max-width: 100%; height: auto; }
+}
+
+/* Nota: usar clases .no-print en elementos HTML que no quieras imprimir.
+   Evita la técnica global de visibilidad, que rompe position:fixed y repetición de thead. */

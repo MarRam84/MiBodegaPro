@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configuración</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <div class="form-container">
+      <h2>Configuración</h2>
+      <form id="formConfiguracion">
+        <div class="form-group">
+          <label for="nombreBodega">Nombre de la Bodega:</label>
+          <input type="text" id="nombreBodega" name="nombreBodega" />
+        </div>
+        <div class="form-group">
+          <label for="direccionBodega">Dirección:</label>
+          <input type="text" id="direccionBodega" name="direccionBodega" />
+        </div>
+        <div class="form-group">
+          <label for="telefonoBodega">Teléfono:</label>
+          <input type="text" id="telefonoBodega" name="telefonoBodega" />
+        </div>
+        <div class="form-group">
+          <label for="emailBodega">Email de Contacto:</label>
+          <input type="email" id="emailBodega" name="emailBodega" />
+        </div>
+        <div class="form-group">
+          <label for="temaBodega">Tema de la Aplicación:</label>
+          <select id="temaBodega" name="temaBodega">
+            <option value="Claro">Claro</option>
+            <option value="Oscuro">Oscuro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="stockCritico">Umbral de Stock Crítico:</label>
+          <input type="number" id="stockCritico" name="stockCritico" min="0" />
+        </div>
+        <div class="form-group">
+          <label for="diasVencimiento">Días para Aviso de Vencimiento:</label>
+          <input type="number" id="diasVencimiento" name="diasVencimiento" min="0" />
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Guardar Configuración
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

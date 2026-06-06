@@ -1,0 +1,28 @@
+<<<<<<< HEAD
+node_modules
+npm-debug.log
+.git
+.gitignore
+README.md
+.env
+.nyc_output
+coverage
+.parcel-cache
+www
+android
+dist
+=======
+node_modules
+npm-debug.log
+.git
+.gitignore
+README.md
+.env
+.nyc_output
+coverage
+.parcel-cache
+www
+android
+dist
+>>>>>>> 13e69faebb8a7ba55613f4029cae9fc038cf582b
+*.db

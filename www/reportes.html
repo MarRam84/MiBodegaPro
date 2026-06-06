@@ -1,0 +1,45 @@
+<!DOCTYPE html><html lang=es><meta charset=UTF-8><meta name=viewport content="width=device-width, initial-scale=1.0"><title>Reportes</title><link rel=stylesheet href=/agregar-producto.eeea073c.css><link rel=stylesheet href=/reportes.2db74705.css media=print><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel=stylesheet><link rel=stylesheet href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin=anonymous referrerpolicy=no-referrer><body>
+    <div class=print-logo>
+      <h1>Mi Bodeguita</h1>
+      <p>Sistema Integral de Inventario y Ventas</p>
+      <p>Dirección: Calle Principal 123, Ciudad, País</p>
+      <p>Teléfono: (123) 456-7890 | Email: info@mibodeguita.com</p>
+    </div>
+    <h2>Reportes</h2>
+    <form id=formReportes>
+      <div class=form-group>
+        <label for=tipoReporte>Tipo de Reporte:</label>
+        <select id=tipoReporte name=tipoReporte>
+          <option value=inventario>Inventario Actual</option>
+          <option value=entradas>Entradas por Fecha</option>
+          <option value=salidas>Salidas por Fecha</option>
+          <option value=vencimientos>Productos Próximos a Vencer</option>
+        </select>
+      </div>
+      <div class=form-group>
+        <label for=fechaInicioReporte>Fecha de Inicio:</label>
+        <input type=date id=fechaInicioReporte name=fechaInicioReporte>
+      </div>
+      <div class=form-group>
+        <label for=fechaFinReporte>Fecha de Fin:</label>
+        <input type=date id=fechaFinReporte name=fechaFinReporte>
+      </div>
+      <button class="btn btn-primary">Generar Reporte</button>
+    </form>
+    <div id=reporteContainer>
+      <div id=reporteHeader style=display:none>
+        <h3 id=reporteTitulo></h3>
+        <button id=btnImprimir class="btn btn-secondary">
+          <i class="fa-print fas"></i> Imprimir
+        </button>
+        <button id=btnGenerarPDF class=no-print>
+          <i class="fa-file-pdf fas"></i> Generar PDF
+        </button>
+      </div>
+      <div id=reporteContenido>
+        <canvas id=reporteGrafico></canvas>
+        
+      </div>
+    </div>
+  
+

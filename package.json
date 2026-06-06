@@ -1,0 +1,125 @@
+<<<<<<< HEAD
+{
+  "name": "web-application-app",
+  "version": "1.0.0",
+  "description": "Sistema integral de inventario y ventas como aplicación de escritorio",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "electron": "electron index.js",
+    "dist": "electron-builder",
+    "build": "parcel build src/*.html --dist-dir www",
+    "sync": "npx cap sync",
+    "android": "npx cap open android",
+    "clean": "rimraf .parcel-cache www"
+  },
+  "keywords": [
+    "parcel",
+    "capacitor",
+    "inventory",
+    "nodejs",
+    "mysql",
+    "sqlite"
+  ],
+  "author": "Marlon",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/android": "^7.4.4",
+    "@capacitor/cli": "^7.4.4",
+    "@capacitor/core": "^7.4.4",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "helmet": "^8.2.0",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.15.3",
+    "nodemon": "^3.1.11"
+  },
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12",
+    "parcel": "^2.16.3",
+    "rimraf": "^5.0.0"
+  },
+  "build": {
+    "appId": "com.marlon.bodega",
+    "productName": "Mi Bodeguita",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "server.js",
+      "index.js",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
+=======
+{
+  "name": "web-application-app",
+  "version": "1.0.0",
+  "description": "Sistema integral de inventario y ventas como aplicación de escritorio",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "electron": "electron index.js",
+    "dist": "electron-builder",
+    "build": "parcel build src/*.html --dist-dir www",
+    "sync": "npx cap sync",
+    "android": "npx cap open android",
+    "clean": "rimraf .parcel-cache www"
+  },
+  "keywords": [
+    "parcel",
+    "capacitor",
+    "inventory",
+    "nodejs",
+    "mysql",
+    "sqlite"
+  ],
+  "author": "Marlon",
+  "license": "ISC",
+  "dependencies": {
+    "@capacitor/android": "^7.4.4",
+    "@capacitor/cli": "^7.4.4",
+    "@capacitor/core": "^7.4.4",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "helmet": "^8.2.0",
+    "jsonwebtoken": "^9.0.3",
+    "mysql2": "^3.15.3",
+    "nodemon": "^3.1.11"
+  },
+  "devDependencies": {
+    "electron": "^39.2.7",
+    "electron-builder": "^26.0.12",
+    "parcel": "^2.16.3",
+    "rimraf": "^5.0.0"
+  },
+  "build": {
+    "appId": "com.marlon.bodega",
+    "productName": "Mi Bodeguita",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "server.js",
+      "index.js",
+      "package.json",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  }
+}
+>>>>>>> 13e69faebb8a7ba55613f4029cae9fc038cf582b
