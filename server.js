@@ -16,7 +16,15 @@ if (!JWT_SECRET) {
 }
 
 // Middleware
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: {
+    directives: {
+      ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+      // Permitimos que el navegador cargue scripts de nuestro servidor y del CDN de Chart.js
+      "script-src": ["'self'", "https://cdn.jsdelivr.net", "https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"],
+    },
+  },
+}));
 app.use(cors({
   origin: process.env.ALLOWED_ORIGINS ? process.env.ALLOWED_ORIGINS.split(',').map(o => o.trim()) : "*",
   methods: ["GET", "POST", "PUT", "DELETE"]
@@ -36,11 +44,11 @@ app.get("/dashboard", (req, res) => {
 });
 
 // Conexión a la base de datos MySQL
-const dbHost = process.env.DB_HOST?.trim() || "localhost";
-const dbPort = process.env.DB_PORT ? Number(process.env.DB_PORT) : 3306;
-const dbUser = process.env.DB_USER?.trim() || "root";
-const dbPassword = process.env.DB_PASSWORD ?? "";
-const dbName = process.env.DB_NAME?.trim() || "mibodeguita";
+const dbHost = (process.env.DB_HOST || process.env.MYSQLHOST || "localhost").trim();
+const dbPort = Number(process.env.DB_PORT || process.env.MYSQLPORT || 3306);
+const dbUser = (process.env.DB_USER || process.env.MYSQLUSER || "root").trim();
+const dbPassword = process.env.DB_PASSWORD || process.env.MYSQLPASSWORD || "";
+const dbName = (process.env.DB_NAME || process.env.MYSQLDATABASE || "mibodeguita").trim();
 
 // Inicializamos el pool directamente con la base de datos definida
 let pool = mysql.createPool({
@@ -221,6 +229,10 @@ function connectAndStart() {
         return;
       }
       console.error("Error de conexión a MySQL:", err.message);
+      if (dbHost.includes('.internal')) {
+        console.warn("\n💡 TIP: Estás intentando usar un host '.internal'.");
+        console.warn("Si estás ejecutando el servidor localmente, necesitas usar el Host Público y Puerto de Railway.\n");
+      }
       process.exit(1);
     }
     connection.release();

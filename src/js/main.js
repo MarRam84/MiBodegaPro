@@ -357,6 +357,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return new Promise((resolve, reject) => {
       const script = document.createElement("script");
       script.src = src;
+      script.type = "text/javascript";
+      script.async = true;
+      script.crossOrigin = "anonymous";
       script.onload = resolve;
       script.onerror = reject;
       document.head.appendChild(script);
@@ -388,7 +391,7 @@ document.addEventListener("DOMContentLoaded", () => {
             activarConfiguracion();
             break;
           case "reportes":
-            loadScript("https://cdn.jsdelivr.net/npm/chart.js")
+            loadScript("https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js")
               .then(() => {
                 activarReportes();
               })

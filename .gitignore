@@ -1,7 +1,9 @@
-<<<<<<< HEAD
 node_modules/
 .env
-=======
-node_modules/
-.env
->>>>>>> 13e69faebb8a7ba55613f4029cae9fc038cf582b
+.parcel-cache/
+www/
+dist/
+build/
+.DS_Store
+*.log
+.vscode/
